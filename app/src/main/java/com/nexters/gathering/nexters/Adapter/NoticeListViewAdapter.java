@@ -33,6 +33,8 @@ public class NoticeListViewAdapter extends BaseAdapter {
         this.inflater = inflater;
         this.noticeList = noticeList;
 
+
+        //테스트 데이터
         noticeList.add(new Notice());
         noticeList.add(new Notice("2", "1", "넥스터즈 전체", "공지2", true, new Date(), "마루일공팔공", "넥스터즈 CEO", new Date()));
         noticeList.add(new Notice("3", "1", "넥스터즈 전체", "공지3", false, new Date(), "카우앤독", "김대경", new Date()));
@@ -73,6 +75,8 @@ public class NoticeListViewAdapter extends BaseAdapter {
         }
 
         // View binding
+        //아이디 추가할 것
+        TextView type = (TextView)convertView.findViewById(R.id.noti_type);
         TextView target = (TextView)convertView.findViewById(R.id.noti_target);
         TextView title = (TextView)convertView.findViewById(R.id.noti_title);
         TextView time = (TextView)convertView.findViewById(R.id.noti_time);
@@ -80,8 +84,9 @@ public class NoticeListViewAdapter extends BaseAdapter {
         TextView writer = (TextView)convertView.findViewById(R.id.noti_writer);
         TextView writeTime = (TextView)convertView.findViewById(R.id.noti_write_time);
         ImageView favor = (ImageView)convertView.findViewById(R.id.noti_favor);
-        //아이디 타입 추가할 것
 
+
+        // 공지에 해당하는 내용 삽입
         target.setText(noticeList.get(position).getTarget());
         title.setText(noticeList.get(position).getTitle());
         time.setText(noticeList.get(position).getTime().toString());
@@ -89,6 +94,8 @@ public class NoticeListViewAdapter extends BaseAdapter {
         writer.setText(noticeList.get(position).getWriter());
         writeTime.setText(noticeList.get(position).getWriteTime().toString());
 
+
+        // 즐겨찾기 상태에 따라 아이콘 변경
         if(noticeList.get(position).isFavor() == true)
         {
             favor.setBackgroundResource(R.drawable.icon_favor_act);
@@ -96,6 +103,23 @@ public class NoticeListViewAdapter extends BaseAdapter {
         else
         {
             favor.setBackgroundResource(R.drawable.icon_favor_deact);
+        }
+
+        // 공지의 타입에 따라 색 변경
+        switch (Integer.parseInt(noticeList.get(position).getType()))
+        {
+            case 1:
+                type.setBackgroundResource(R.color.noti_nexters);
+                break;
+            case 2:
+                type.setBackgroundResource(R.color.noti_team);
+                break;
+            case 3:
+                type.setBackgroundResource(R.color.noti_position);
+                break;
+            case 4:
+                type.setBackgroundResource(R.color.noti_general);
+                break;
         }
 
         return convertView;

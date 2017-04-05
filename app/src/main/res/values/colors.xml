@@ -3,6 +3,20 @@
     <color name="login_letter_color">#159cc1</color>
     <color name="login_hint_color">#56dcec</color>
     <color name="login_input_letter_color">#ffffff</color>
+
+    <color name="noti_background">#ffffff</color>
+    <color name="noti_boxshadow">#55A4A4A4</color>
+    <color name="noti_nexters">#063362</color>
+    <color name="noti_team">#5787b9</color>
+    <color name="noti_position">#a4cef9</color>
+    <color name="noti_general">#ffffff</color>
+
+    <color name="noti_target">#757575</color>
+    <color name="noti_title">#000000</color>
+    <color name="noti_writer">#757575</color>
+    <color name="noti_writeTime">#757575</color>
+
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
