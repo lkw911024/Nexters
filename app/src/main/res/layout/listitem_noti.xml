@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="328dp"
     android:layout_height="137dp"
+    android:layout_marginBottom="12dp"
     android:orientation="horizontal"
+    android:background="#ffffff"
     >
 
     <TextView
@@ -15,7 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="20dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +53,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/noti_favor_btn"
+                android:id="@+id/noti_favor"
                 android:layout_width="20dp"
                 android:layout_height="30dp"
                 android:background="@drawable/icon_favor_act"/>
